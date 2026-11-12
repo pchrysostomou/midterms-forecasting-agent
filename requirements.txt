@@ -1,0 +1,7 @@
+# The versions pinned by the organisers' kit (https://github.com/poros-foundry/forecast-the-future-2026)
+pandas==3.1.0
+requests==2.34.2
+yfinance==1.7.0
+openai==3.37.0
+# Only for --dev runs on your own Anthropic key
+anthropic==2.3.0

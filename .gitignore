@@ -1,0 +1,13 @@
+# Secrets and local environments
+.env
+.venv/
+# Event data and run outputs (the data pack belongs to the organisers; traces and answers stay private)
+data/
+out/
+.ftf/
+answers/
+receipts/
+# Python and macOS clutter
+__pycache__/
+*.pyc
+.DS_Store
