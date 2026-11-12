@@ -6,17 +6,17 @@
 
 An LLM agent that forecast the 2026 US midterm elections and the next-day market reaction. It won **Best AI Agent Process** at Poros Foundry's *Forecast the Future: US Midterm Election Night Edition* (London, 3 November 2026).
 
-The core idea: several models form a view without seeing the market, and then code, not a model, decides how far that view may move the answer away from the market.
+The core idea: several models form a view without seeing the market price for the question, and then code, not a model, decides how far that view may move the answer away from the market.
 
 ## Results
 
-18 teams took part: 8 in the AI-only track and 10 human or human + AI teams. In the AI-only track the agent produces every number. You can change how it works, but you cannot tell it the answer.
+There were three tracks: AI-only, human + AI, and human only. In the AI-only track the agent produces every number. You can change how it works, but you cannot tell it the answer.
 
 | Prize or part | Result |
 |---|---|
-| Best AI Agent Process | **1st of 8 AI-only teams**, 4.05/5 (AI-only average 3.35) |
-| Next-day market moves (10 questions) | 5th of 18 teams, 2nd among AI-only teams (scaled error 2.82, lower is better) |
-| Election forecasts (15 questions) | 9th of 18 teams, 3rd among AI-only teams (-0.29 Brier points per question against the prediction market; 0 means matching it) |
+| Best AI Agent Process | **1st place**, 4.05/5 (AI-only average 3.35) |
+| Next-day market moves (10 questions) | 5th overall, 2nd in the AI-only track (scaled error 2.82, lower is better) |
+| Election forecasts (15 questions) | 9th overall, 3rd in the AI-only track (-0.29 Brier points per question against the prediction market; 0 means matching it) |
 
 The process score was rated by two judge models, each run twice:
 
@@ -112,7 +112,7 @@ python agent/backtest_b.py     # Part B prior backtest, no keys needed
 Development runs use your own Anthropic key and can never submit:
 
 ```bash
-pip install anthropic
+pip install -r ../midterms-forecasting-agent/requirements.txt   # the kit's versions plus anthropic
 export ANTHROPIC_API_KEY=...
 python agent/agent.py --dev --run d1 --only A1,B4
 ```
@@ -134,11 +134,11 @@ Event runs (`python agent/agent.py --run <label> --submit`) used the event's Ope
 
 ## Notes
 
-- The code here is the version that made the judged run (run 3, commit `96fa458` of my private event repo).
+- My event repo stays private because it also holds the organisers' data pack and my own run notes. The agent code here is identical, file for file, to the commit that made the judged run (run 3, commit `96fa458`).
 - I wrote the code with Claude Code.
 - The organisers' data pack is not included. Get it from [their repo](https://github.com/poros-foundry/forecast-the-future-2026).
 
-Thanks to Helen Hu and the Poros Foundry team for organising Forecast the Future.
+Thanks to Helen Hu and Poros Foundry for organising Forecast the Future.
 
 ## License
 
