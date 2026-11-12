@@ -1,0 +1,25 @@
+name: tests
+on:
+  push:
+  pull_request:
+jobs:
+  offline-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get the organisers' event kit (pinned to the 3 Nov data refresh)
+        run: |
+          git clone https://github.com/poros-foundry/forecast-the-future-2026 kit
+          git -C kit checkout 8d97179
+          cp -r agent kit/agent
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install
+        run: pip install -r kit/requirements.txt
+      - name: Offline tests
+        working-directory: kit
+        run: python agent/test_offline.py
+      - name: Part B backtest runs
+        working-directory: kit
+        run: python agent/backtest_b.py

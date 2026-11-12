@@ -7,6 +7,8 @@ out/
 .ftf/
 answers/
 receipts/
+# The organisers' kit, when cloned inside this repo (as the CI does)
+kit/
 # Python and macOS clutter
 __pycache__/
 *.pyc
