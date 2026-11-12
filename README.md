@@ -8,6 +8,8 @@ An LLM agent that forecast the 2026 US midterm elections and the next-day market
 
 The core idea: several models form a view without seeing the market price for the question, and then code, not a model, decides how far that view may move the answer away from the market.
 
+This repo holds all of my agent code. It runs on top of the organisers' public data kit, which is not included here (see Run it).
+
 ## Results
 
 There were three tracks: AI-only, human + AI, and human only. In the AI-only track the agent produces every number. You can change how it works, but you cannot tell it the answer.
@@ -37,7 +39,7 @@ The process score was rated by two judge models, each run twice:
 ```mermaid
 flowchart LR
     D["Data<br/>(code only)"] --> R["Research<br/>Claude Sonnet 5 + web search"]
-    R --> F["3 blind forecasters<br/>Claude Sonnet 5, GPT-6 Sol, Gemini 4 Argon<br/>(median)"]
+    R --> F["3 forecasters<br/>Claude Sonnet 5, GPT-6 Sol, Gemini 4 Argon<br/>(median)"]
     F --> C["Consistency check<br/>across questions"]
     C --> K["Critique<br/>GPT-5.6 Terra"]
     K --> A["Anchor<br/>(code only)"]
