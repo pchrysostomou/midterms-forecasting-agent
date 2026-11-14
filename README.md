@@ -137,7 +137,6 @@ Event runs (`python agent/agent.py --run <label> --submit`) used the event's Ope
 ## Notes
 
 - My event repo stays private because it also holds the organisers' data pack and my own run notes. The agent code here is identical, file for file, to the commit that made the judged run (run 3, commit `96fa458`).
-- I wrote the code with Claude Code.
 - The organisers' data pack is not included. Get it from [their repo](https://github.com/poros-foundry/forecast-the-future-2026).
 
 Thanks to Helen Hu and Poros Foundry for organising Forecast the Future.
